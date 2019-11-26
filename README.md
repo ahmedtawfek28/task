@@ -70,4 +70,24 @@ email: test2@email.com
 password: secret
 </span>
 </code></pre>
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<p>prfile data (get) : (Token)</p>
+<p>add token </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">
+http://127.0.0.1:8000/api/me
+</span>
+</code></pre>
+<p>Departments data with employee of it :v1 ,v2  </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">
+http://127.0.0.1:8000/api/v1/department
+</span>
+</code></pre>
+<p>Managers data with All Managers : </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">
+http://127.0.0.1:8000/api/v1/managers
+</span>
+</code></pre>
+<p>Manager with id : </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">
+http://127.0.0.1:8000/api/v1/manager/{id}
+</span>
+</code></pre>

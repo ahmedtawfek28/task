@@ -18,11 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('register', 'UserController@register');
 Route::post('login', 'UserController@authenticate');
-// Route::get('open', 'DataController@open');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('me', 'UserController@getAuthenticatedUser');
-    // Route::get('closed', 'DataController@closed');
 });
 Route::group(['prefix' => 'v1'], function () {
 Route::get('department','DataController@department');
@@ -30,5 +28,7 @@ Route::get('managers','DataController@Managers');
 Route::get('manager/{id}','DataController@Manager');
 });
 Route::group(['prefix' => 'v2'], function () {
-
+    Route::get('department','DataController@department');
+    Route::get('managers','DataController@Managers');
+    Route::get('manager/{id}','DataController@Manager');
 });
