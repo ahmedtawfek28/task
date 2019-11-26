@@ -31,39 +31,43 @@ DB_DATABASE=homestead
 DB_USERNAME=homestead
 DB_PASSWORD=secret
 </code></pre>
-<p>Next, change the database from utf8mp4 to utf8 <code>config/database.php</code> :</p>
-<p>From <code>:</p>
 
-<pre><code class="lang-php"><span class="cm-s-neo"><span class="cm-string">'<?php'</span> 
-<span class="cm-string">'use Illuminate\Support\Str;'</span>
-<span class="cm-string">'return ['</span>
-
-    <span class="cm-comment">//...</span>
-
-    <span class="cm-variable">'charset' => 'utf8mp4',</span>,
-    <span class="cm-variable">'collation' => 'utf8mp4_unicode_ci',</span>,
-    <span class="cm-comment">// ...</span>
-
-],</span>
-</code></pre>
-<p>To <code>:</p>
-
-<pre><code class="lang-php"><span class="cm-s-neo"><span class="cm-string">'<?php'</span> 
-<span class="cm-string">'use Illuminate\Support\Str;'</span>
-<span class="cm-string">'return ['</span>
-
-    <span class="cm-comment">//...</span>
-
-    <span class="cm-variable">'charset' => 'utf8',</span>,
-    <span class="cm-variable">'collation' => 'utf8_unicode_ci',</span>,
-    <span class="cm-comment">// ...</span>
-
-],</span>
-</code></pre>
-<p>and last to migrate the data base with seeds : </p>
+<p>and at last to migrate the database with seeds : </p>
 <pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">$ php </span> artisan migrate --seed</span>
 </code></pre>
 </div>
-## License
+<p>run the server : </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">$ php </span> artisan serve</span>
+</code></pre>
+</div>
 
+## Usage 
+
+<p>This task about makeing  Json of a company with departments, each department should have employee and manager, and their profiles (should include only the word profile)  </p>
+
+<p>For Registration (post): </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">http://127.0.0.1:8000/api/register</span>
+</code></pre>
+<p>Parametars </p>
+<p>department_id that will work as foreign key of table department</p>
+<p>manager_id that will work as foreign key of table user 0 as a manager and else will be as employee related with manager_id </p>
+<p>Example : </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">
+name: Test Man
+email: test2@email.com
+department_id:1
+manager_id:1
+password: secret
+password_confirmation: secret
+</span>
+</code></pre>
+<p>For Login (post): </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">http://127.0.0.1:8000/api/login</span>
+</code></pre>
+<p>Example : </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">
+email: test2@email.com
+password: secret
+</span>
+</code></pre>
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
