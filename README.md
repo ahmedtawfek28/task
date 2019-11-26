@@ -30,8 +30,39 @@
 DB_DATABASE=homestead
 DB_USERNAME=homestead
 DB_PASSWORD=secret
-</code></pre><p>You will also want to update your website URL inside of the <code>APP_URL</code> variable inside the .env file:</p>
+</code></pre>
+<p>Next, change the database from utf8mp4 to utf8 <code>config/database.php</code> :</p>
+<p>From <code>:</p>
 
+<pre><code class="lang-php"><span class="cm-s-neo"><span class="cm-string">'<?php'</span> 
+<span class="cm-string">'use Illuminate\Support\Str;'</span>
+<span class="cm-string">'return ['</span>
+
+    <span class="cm-comment">//...</span>
+
+    <span class="cm-variable">'charset' => 'utf8mp4',</span>,
+    <span class="cm-variable">'collation' => 'utf8mp4_unicode_ci',</span>,
+    <span class="cm-comment">// ...</span>
+
+],</span>
+</code></pre>
+<p>To <code>:</p>
+
+<pre><code class="lang-php"><span class="cm-s-neo"><span class="cm-string">'<?php'</span> 
+<span class="cm-string">'use Illuminate\Support\Str;'</span>
+<span class="cm-string">'return ['</span>
+
+    <span class="cm-comment">//...</span>
+
+    <span class="cm-variable">'charset' => 'utf8',</span>,
+    <span class="cm-variable">'collation' => 'utf8_unicode_ci',</span>,
+    <span class="cm-comment">// ...</span>
+
+],</span>
+</code></pre>
+<p>and last to migrate the data base with seeds : </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">$ php </span> artisan migrate --seed</span>
+</code></pre>
 </div>
 ## License
 
