@@ -15,6 +15,16 @@
 <p>Next we will get in on the file to manage : </p>
 <pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">$ cd</span> Task</span>
 </code></pre>
+<p>Next we will install Composer: </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">$ composer</span> install</span>
+</code></pre>
+<p>Next we will Copy the .env.example to file of .env : </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">$ cp</span> .env.example .env</span>
+</code></pre>
+<p>Next we will generate the key : </p>
+<pre><code class="lang-bash"><span class="cm-s-neo"><span class="cm-def">$ php</span> artisan key:generate</span>
+</code></pre>
+
 <p>Next make sure to create a new database and add your database credentials to your .env file:</p>
 <pre><code>DB_HOST=localhost
 DB_DATABASE=homestead
